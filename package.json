@@ -1,0 +1,17 @@
+{
+  "name": "cars",
+  "version": "0.0.0",
+  "description": "Cars example for @bashmish",
+  "main": "main.js",
+  "dependencies": {
+    "immutable": "^3.3.0",
+    "lodash": "^2.4.1",
+    "transducers-js": "^0.4.135"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node main"
+  },
+  "author": "filipovsky",
+  "license": "MIT"
+}
