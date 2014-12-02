@@ -20,9 +20,12 @@ propertyIn = function(name, val) {
 result = cars
 	.filter( propertyIn('name', filter.carName) )
 	.map( function(car) {
-    var carel = JSON.parse( JSON.stringify(car) );
-    carel.pieces = car.pieces.filter( propertyIn('name', filter.pieceName) );
-    return carel;
+
+    return Object.keys(car).reduce( function(obj, key) {
+      if( key !== 'pieces' ) obj[key] = car[key];
+      return obj;
+    }, { pieces: car.pieces.filter( propertyIn('name', filter.pieceName) ) } );
+
 	});
 
 console.log(util.inspect(result, {showHidden: false, depth: null}));
