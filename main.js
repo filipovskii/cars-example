@@ -19,7 +19,7 @@ propertyIn = function(name, val) {
 result = _.filter(cars, propertyIn('name', filter.carName));
 result = _.map(result, function(car) {
   var pieces = _.filter(car.pieces, propertyIn('name', filter.pieceName));
-  return _.assign(car, {pieces: pieces});
+  return _.assign({}, car, {pieces: pieces});
 })
 
 
